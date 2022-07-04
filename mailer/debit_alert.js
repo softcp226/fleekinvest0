@@ -5,15 +5,15 @@ let debit_transporter = nodemailer.createTransport({
   secure: false,
 
   auth: {
-    user: "frauddetectionai@gmail.com",
-    pass: "desolidboy1",
-    // secure:false,
+    user: "fleekinvest@gmail.com",
+    pass: "ssodrgxkylvcbizy",
+   
   },
 });
 
 let debit_create_mail_options = (userInfo) => {
   return (mailOptions = {
-    from: "support@1360trade-fx.com",
+    from: "fleekinvest@fleekinvest.com",
     // from:"michelleannschlloser@outlook.com",
     to: userInfo.reciever_mail,
     subject: `DEBIT ALERT`,

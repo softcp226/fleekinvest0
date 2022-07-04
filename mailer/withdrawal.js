@@ -5,10 +5,9 @@ let transporter = nodemailer.createTransport({
   secure: false,
 
   auth: {
-    user: "frauddetectionai@gmail.com",
-    // pass: "desolidboy1",
-    pass: "aqwkqnlytrdbtiik",
-    // secure:false,
+    user: "fleekinvest@gmail.com",
+    pass: "ssodrgxkylvcbizy",
+   
   },
 });
 
@@ -19,7 +18,7 @@ let datetime = `${currentdate.getFullYear()}-${
 
 let create_mail_options = (userInfo) => {
   return (mailOptions = {
-    from: "support@1360trade-fx.com",
+    from: "fleekinvest@fleekinvest.com",
     // from:"michelleannschlloser@outlook.com",
     to: userInfo.reciever,
     subject: `Withdrawal Confirmation Notification`,
@@ -86,8 +85,8 @@ font-family: 'Roboto', sans-serif;
     </div>
 
     <p class="sm-p">
-      Dear ${userInfo.first_name} ${userInfo.last_name}, you have successfully initiated a withdrawal of crypto that amounts $${userInfo.amount}  from your FLEEKINVEST account on <b>${datetime}</b>.
-   your fund will be delivered as indicated on your withdrawal request in less than 24 hours
+      Dear ${userInfo.first_name} ${userInfo.last_name}, you have successfully initiated to withdraw crypto that amounts $${userInfo.amount}  from your FLEEKINVEST account on <b>${datetime}</b>.
+  
 
     </p>
     <p class="sm-p">

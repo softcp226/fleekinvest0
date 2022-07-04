@@ -5,10 +5,9 @@ let transporter = nodemailer.createTransport({
   secure: false,
 
   auth: {
-    user: "frauddetectionai@gmail.com",
-    // pass: "desolidboy1",
-    pass: "aqwkqnlytrdbtiik",
-    // secure:false,
+    user: "fleekinvest@gmail.com",
+    pass: "ssodrgxkylvcbizy",
+   
   },
 });
 
@@ -19,7 +18,7 @@ let datetime = `${currentdate.getFullYear()}-${
 
 let create_mail_options = (userInfo) => {
   return (mailOptions = {
-    from: "support@1360trade-fx.com",
+    from: "fleekinvest@fleekinvest.com",
     // from:"michelleannschlloser@outlook.com",
     to: userInfo.reciever,
     subject: `Deposit Confirmation Notification`,
@@ -88,8 +87,9 @@ font-family: 'Roboto', sans-serif;
     <p class="sm-p">
       Dear ${userInfo.first_name} ${userInfo.last_name}, your deposit has been proccessed and approved 
       on <b>${datetime}</b>.
-    your fund has been deposited into your account with 50% first deposit bonus added
+    your fund has been deposited into your account with 10% deposit bonus added
     </p>
+    
     <p class="sm-p">
     NB: your deposit has been converted to (united state dollars(USD)) which is the default currency used @fleekinvest.
       For more detailed informations, please contact our customer support or your

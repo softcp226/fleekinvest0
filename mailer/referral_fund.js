@@ -5,10 +5,9 @@ let transporter2 = nodemailer.createTransport({
   secure: false,
 
   auth: {
-    user: "frauddetectionai@gmail.com",
-    // pass: "desolidboy1",
-    pass: "aqwkqnlytrdbtiik",
-    // secure:false,
+    user: "fleekinvest@gmail.com",
+    pass: "ssodrgxkylvcbizy",
+   
   },
 });
 
@@ -19,7 +18,7 @@ let datetime = `${currentdate.getFullYear()}-${
 
 let create_mail_options2 = (userInfo) => {
   return (mailOptions = {
-    from: "support@1360trade-fx.com",
+    from: "fleekinvest@fleekinvest.com",
     // from:"michelleannschlloser@outlook.com",
     to: userInfo.reciever,
     subject: `REFERRAL BONUS CONFIRMATION NOTIFICATION`,

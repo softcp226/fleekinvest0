@@ -84,13 +84,21 @@ Router.post("/", verifyToken, async (req, res) => {
         }
       );
     }
-    let bonus = parseInt(req.body.deposit_amount) / 2;
+    let bonus = parseInt(req.body.deposit_amount) /100 *10;
+    // if(user. final_balance <=0){
+    //   user.set({
+    //     final_balance:
+    //       parseInt(user.final_balance) +
+    //       parseInt(req.body.deposit_amount) 
+    //   });
+    // }else{
     user.set({
       final_balance:
         parseInt(user.final_balance) +
         parseInt(req.body.deposit_amount) +
         bonus,
     });
+  
     transaction.set({ status: "success" });
 
     await Deposit_request.findByIdAndDelete(req.body.deposit_request);

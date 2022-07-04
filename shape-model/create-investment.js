@@ -1,23 +1,33 @@
 const Investment = require("../model/investment");
 
+
 const select_investment_end_time = (req) => {
   if (req.body.return_time == "daily_return") {
-    let currentdate = new Date();
-    currentdate.setDate(currentdate.getDate() + 1);
-    let datetime = `${currentdate.getFullYear()}-${
-      currentdate.getMonth() + 1
-    }-${currentdate.getDate()} -  ${currentdate.getHours()}: ${currentdate.getMinutes()} : ${currentdate.getSeconds()}`;
-    return datetime;
+    // let currentdate = new Date();
+    // currentdate.setDate(currentdate.getDate() + 1);
+    // let datetime = `${currentdate.getFullYear()}-${
+    //   currentdate.getMonth() + 1
+    // }-${currentdate.getDate()} -  ${currentdate.getHours()}: ${currentdate.getMinutes()} : ${currentdate.getSeconds()}`;
+    // return datetime;
+    let date = new Date();
+    date.setDate(date.getDate() + 1);
+    let end_date = date.getTime();
+    return end_date;
   } else {
-    let currentdate = new Date();
-    currentdate.setDate(currentdate.getDate() + 7);
+    // let currentdate = new Date();
+    // currentdate.setDate(currentdate.getDate() + 7);
+    // let datetime = `${currentdate.getFullYear()}-${
+    //   currentdate.getMonth() + 1
+    // }-${currentdate.getDate()} -  ${currentdate.getHours()}: ${currentdate.getMinutes()} : ${currentdate.getSeconds()}`;
+    // return datetime;
 
-    let datetime = `${currentdate.getFullYear()}-${
-      currentdate.getMonth() + 1
-    }-${currentdate.getDate()} -  ${currentdate.getHours()}: ${currentdate.getMinutes()} : ${currentdate.getSeconds()}`;
-    return datetime;
+    let date = new Date();
+    date.setDate(date.getDate() + 7);
+    let end_date = date.getTime();
+    return end_date;
   }
 };
+
 
 const create_investment = async (req) => {
   let currentdate = new Date();
@@ -25,7 +35,7 @@ const create_investment = async (req) => {
     currentdate.getMonth() + 1
   }-${currentdate.getDate()} -  ${currentdate.getHours()}: ${currentdate.getMinutes()} : ${currentdate.getSeconds()}`;
   let ref = Math.floor(Math.random() * 1000);
-console.log(select_investment_end_time(req));
+  console.log("end time", select_investment_end_time(req));
 
   const investment = await new Investment({
     user: req.body.user,

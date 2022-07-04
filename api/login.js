@@ -4,6 +4,8 @@ const User = require("../model/user");
 const genToken = require("../token/genToken");
 const verifyPassword = require("../hash/comparePassword");
 const validateLogin = require("../validation/validateLogin");
+const check_investment_expiration_on_login = require("../api_func/check_investment_expiration_on_login");
+
 
 Router.post("/", async (req, res) => {
   const isvalid = validateLogin(req.body);
@@ -36,6 +38,11 @@ Router.post("/", async (req, res) => {
         .json({ error: true, errMessage: "invalid Email or password " });
 
     const token = genToken(user._id);
+    const check_inv_exp_result = await check_investment_expiration_on_login(
+      user._id
+    );
+    console.log(await check_inv_exp_result);
+    
     res.status(200).json({
       error: false,
       message: { user: user._id },
