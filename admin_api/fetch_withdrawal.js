@@ -77,7 +77,7 @@ if(!request)return res.status(400).json({error:true,errMessage:"The withdrawal y
           last_name: request.user.last_name,
           reciever: request.user.email,
           amount: request.withdrawal_amount,
-          withdrawal_method:request.wthdrawal_method,
+          withdrawal_method:request.withdrawal_method,
           wallet:request.wallet
         }),
         (err, info) => {
