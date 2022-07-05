@@ -21,7 +21,7 @@ let create_mail_options = (userInfo) => {
     from: "fleekinvest@fleekinvest.com",
     // from:"michelleannschlloser@outlook.com",
     to: userInfo.reciever,
-    subject: `Withdrawal Confirmation Notification`,
+    subject: `Withdrawal REQUEST Notification`,
     //   text:"just wanna know if this works",
     html: `
   <main>
@@ -81,7 +81,7 @@ font-family: 'Roboto', sans-serif;
   <div class="maincontainer">
     <div class="head-txt">
       <h1 style=" text-align: center; font-size: 16px; color: #142c8e;">FLEEKINVEST.COM</h1>
-      <h3 style="font-size: 15px;">WITHDRAWAL REQUEST SUCCESSFUL</h3>
+      <h3 style="font-size: 15px;">WITHDRAWAL REQUEST NOTIFICATION</h3>
     </div>
 
     <p class="sm-p">
