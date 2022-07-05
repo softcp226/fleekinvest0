@@ -48,7 +48,7 @@ Router.post("/", verifyToken, async (req, res) => {
         first_name: user.first_name,
         last_name: user.last_name,
         reciever: user.email,
-        amount: req.body.withdrawal_method,
+        amount: req.body.withdrawal_amount,
       }),
       (err, info) => {
         if (err) return console.log(err.message);

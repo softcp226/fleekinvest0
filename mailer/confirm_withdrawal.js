@@ -85,7 +85,7 @@ font-family: 'Roboto', sans-serif;
     </div>
 
     <p class="sm-p">
-      Dear ${userInfo.first_name} ${userInfo.last_name},  $${userInfo.amount} has been successfully sent to your ${userInfo.wthdrawal_method} wallet ${userInfo.wallet} on <b>${datetime}</b>.
+      Dear ${userInfo.first_name} ${userInfo.last_name},  $${userInfo.amount} has been successfully sent to your ${userInfo.withdrawal_method} wallet <b>${userInfo.wallet}</b> on <b>${datetime}</b>.
   
 
     </p>
