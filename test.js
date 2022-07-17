@@ -183,3 +183,17 @@ let today = up_date.getTime();
 console.log(end_date <= today);
 console.log(today);
 console.log(end_date);
+
+
+
+
+mongodb+srv://admin:password1.1@cluster0.cghof.mongodb.net/fleekinvest
+
+
+Tawk login
+email: fleekinvest@gmail.com
+pass:fleekinvest1@1
+
+email=fleekinvest@gmail.com
+pass=fleekinvest1@1
+app_pass=ssodrgxkylvcbizy
