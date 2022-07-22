@@ -198,3 +198,8 @@ email=fleekinvest@gmail.com
 pass=fleekinvest1@1
 app_pass=ssodrgxkylvcbizy
 "mongodb://localhost:27017/capulentinvestment"
+
+
+dns1.registrar-servers.com
+dns2.registrar-servers.com
+
