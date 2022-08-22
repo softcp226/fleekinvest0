@@ -55,11 +55,11 @@ document.querySelector("#submit").onclick = () => {
 
   if (!final_balance.value)
     return (final_balance.style.border = "2px solid red");
-  if (!profit_loss) return (profit_loss.style.border = "2px solid red");
-  if (!active_investment)
-    return (active_investment.style.border = "2px solid red");
-  if (!referral_bonus)
-    return (referral_bonus.style.border = "2px solid red");
+  // if (!profit_loss) return (profit_loss.style.border = "2px solid red");
+  // if (!active_investment)
+  //   return (active_investment.style.border = "2px solid red");
+  // if (!referral_bonus)
+  //   return (referral_bonus.style.border = "2px solid red");
 
   const admin = getCookie("admin");
   const token = getCookie("admin_token");
