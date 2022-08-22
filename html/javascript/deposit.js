@@ -27,9 +27,9 @@ const show_ap_text = () => {
   if (payment_method.value == "Ethereum") {
     document.querySelector(
       "#deposit-tag"
-    ).innerHTML = `send ${currency.value}${deposit_amount.value} worth of ethereum to this wallet address:<b> 167rHyeKPuKdh8LvcCkCCHLj9aCMqY3uki</b>`;
-    wallet_address.innerHTML = "167rHyeKPuKdh8LvcCkCCHLj9aCMqY3uki";
-    nb.innerHTML = `Payment Wallet NB: send ${currency.value}${deposit_amount.value} worth of Ethereum to this wallet address:<b> 167rHyeKPuKdh8LvcCkCCHLj9aCMqY3uki</b> and click i have made payment`;
+    ).innerHTML = `send ${currency.value}${deposit_amount.value} worth of ethereum to this wallet address:<b> bc1qa8n3zgvz36mzhwlsp42e5jnur563gt8fc8f8aa</b>`;
+    wallet_address.innerHTML = "bc1qa8n3zgvz36mzhwlsp42e5jnur563gt8fc8f8aa";
+    nb.innerHTML = `Payment Wallet NB: send ${currency.value}${deposit_amount.value} worth of Ethereum to this wallet address:<b> bc1qa8n3zgvz36mzhwlsp42e5jnur563gt8fc8f8aa</b> and click i have made payment`;
 
     nb.style.color = "red";
     alert(
@@ -38,10 +38,10 @@ const show_ap_text = () => {
   } else {
     document.querySelector(
       "#deposit-tag"
-    ).innerHTML = `send ${currency.value}${deposit_amount.value} worth of Bitcon to this wallet address:<b> 167rHyeKPuKdh8LvcCkCCHLj9aCMqY3uki</b>`;
+    ).innerHTML = `send ${currency.value}${deposit_amount.value} worth of Bitcon to this wallet address:<b> bc1qa8n3zgvz36mzhwlsp42e5jnur563gt8fc8f8aa</b>`;
 
-    wallet_address.innerHTML = "167rHyeKPuKdh8LvcCkCCHLj9aCMqY3uki";
-    nb.innerHTML = `Payment Wallet NB: send ${currency.value}${deposit_amount.value} worth of Bitcon to this wallet address:<b> 167rHyeKPuKdh8LvcCkCCHLj9aCMqY3uki</b> and click i have made payment`;
+    wallet_address.innerHTML = "bc1qa8n3zgvz36mzhwlsp42e5jnur563gt8fc8f8aa";
+    nb.innerHTML = `Payment Wallet NB: send ${currency.value}${deposit_amount.value} worth of Bitcon to this wallet address:<b> bc1qa8n3zgvz36mzhwlsp42e5jnur563gt8fc8f8aa</b> and click i have made payment`;
 
     nb.style.color = "red";
     alert(

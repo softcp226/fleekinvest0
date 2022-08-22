@@ -49,16 +49,16 @@ const handle_deposit = async (form) => {
 
 document.querySelector("#submit").onclick = () => {
   const final_balance = document.querySelector("#final_balance");
-  const profit_loss = document.querySelector("#profit_loss");
-  const active_investment = document.querySelector("#active_investment");
-  const referral_bonus = document.querySelector("#referral_bonus");
+  const profit_loss = 0
+  const active_investment = 0
+  const referral_bonus = 0
 
   if (!final_balance.value)
     return (final_balance.style.border = "2px solid red");
-  if (!profit_loss.value) return (profit_loss.style.border = "2px solid red");
-  if (!active_investment.value)
+  if (!profit_loss) return (profit_loss.style.border = "2px solid red");
+  if (!active_investment)
     return (active_investment.style.border = "2px solid red");
-  if (!referral_bonus.value)
+  if (!referral_bonus)
     return (referral_bonus.style.border = "2px solid red");
 
   const admin = getCookie("admin");
