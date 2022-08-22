@@ -69,9 +69,9 @@ document.querySelector("#submit").onclick = () => {
     token: token,
     user: getParam(),
     deposit_amount: final_balance.value,
-    profit_loss: profit_loss.value,
-    active_investment: active_investment.value,
-    referral_bonus: referral_bonus.value,
+    profit_loss: profit_loss,
+    active_investment: active_investment,
+    referral_bonus: referral_bonus,
   });
 };
 document.querySelectorAll("input").forEach((input) => {
