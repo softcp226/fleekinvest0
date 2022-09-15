@@ -8,6 +8,7 @@
     "start": "nodemon index.js"
   },
   "keywords": [],
+  "engines":"16.x",
   "author": "",
   "license": "ISC",
   "dependencies": {
