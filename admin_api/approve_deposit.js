@@ -44,7 +44,7 @@ Router.post("/", verifyToken, async (req, res) => {
       return res.status(400).json({
         error: true,
         errMessage:
-          "the deposit you requested to approve is not associated witjh a transaction",
+          "the deposit you requested to approve is not associated with a transaction",
       });
     const user = await User.findById(deposit_request.user);
 
@@ -54,15 +54,16 @@ Router.post("/", verifyToken, async (req, res) => {
         errMessage:
           "the user that made the deposit you are trying to approve no longer exist",
       });
+if(user.madeFirstDeposit !=true){
 
     const referral = await User.findOne({ email: user.referral });
     if (referral) {
       const mypercentage = (parseInt(req.body.deposit_amount) / 100) * 10;
       referral.set({
         final_balance:
-          parseInt(referral.final_balance) + parseInt(mypercentage),
+          parseInt(referral.final_balance)+parseInt(mypercentage) ,
         referral_bonus:
-          parseInt(referral.referral_bonus) + parseInt(mypercentage),
+          parseInt(referral.referral_bonus) ,
       });
       referral.save();
       transporter2.sendMail(
@@ -70,9 +71,9 @@ Router.post("/", verifyToken, async (req, res) => {
           first_name: referral.first_name,
           last_name: referral.last_name,
           reciever: referral.email,
-          referral_amount: `$${mypercentage
-            .toString()
-            .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}.0`,
+          // referral_amount: `$${mypercentage
+          //   .toString()
+          //   .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}.0`,
         }),
         (err, info) => {
           if (err) return console.log(err.message);
@@ -84,7 +85,7 @@ Router.post("/", verifyToken, async (req, res) => {
         }
       );
     }
-    let bonus = parseInt(req.body.deposit_amount) /100 *10;
+    // let bonus = parseInt(req.body.deposit_amount) /100 *10;
     // if(user. final_balance <=0){
     //   user.set({
     //     final_balance:
@@ -95,8 +96,8 @@ Router.post("/", verifyToken, async (req, res) => {
     user.set({
       final_balance:
         parseInt(user.final_balance) +
-        parseInt(req.body.deposit_amount) +
-        bonus,
+        parseInt(req.body.deposit_amount) ,
+       madeFirstDeposit:true
     });
   
     transaction.set({ status: "success" });
@@ -124,6 +125,42 @@ Router.post("/", verifyToken, async (req, res) => {
     res
       .status(200)
       .json({ error: false, message: "success, you approved a loan" });
+
+    }else{
+    
+     user.set({
+       final_balance:
+         parseInt(user.final_balance) + parseInt(req.body.deposit_amount),
+     });
+
+     transaction.set({ status: "success" });
+
+     await Deposit_request.findByIdAndDelete(req.body.deposit_request);
+
+     await transaction.save();
+     await user.save();
+
+     transporter.sendMail(
+       create_mail_options({
+         first_name: user.first_name,
+         last_name: user.last_name,
+         reciever: user.email,
+       }),
+       (err, info) => {
+         if (err) return console.log(err.message);
+         console.log(info);
+         // return res.status(400).json({
+         //   error: true,
+         //   errMessage: `Encounterd an error while trying to send an email to you: ${err.message}, try again`,
+         // });
+       },
+     );
+     res
+       .status(200)
+       .json({ error: false, message: "success, you approved a loan" }); 
+
+
+    }
   } catch (error) {
     console.log(error);
     res.status(400).json({ error: true, errMessage: error.message });

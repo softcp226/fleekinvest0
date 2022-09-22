@@ -1,5 +1,5 @@
 {
-  "name": "capulentInvestment",
+  "name": "fleekinvest",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -7,8 +7,10 @@
     "test": "nodemon fetch.js",
     "start": "nodemon index.js"
   },
+  "engines": {
+    "node": "16.x"
+  },
   "keywords": [],
-  "engines":"16.x",
   "author": "",
   "license": "ISC",
   "dependencies": {

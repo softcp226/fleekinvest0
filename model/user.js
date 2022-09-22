@@ -36,6 +36,11 @@ const userSchema = mongoose.Schema({
     type: Number,
     default: 0,
   },
+  madeFirstDeposit:{
+type:Boolean,
+required:true,
+default:false
+  },
   referral_link: String,
   referral: String,
 });
